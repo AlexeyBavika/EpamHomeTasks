@@ -11,7 +11,6 @@ public class NumberSystemInterpreter {
     }
 
     static int binaryToDecimalNumber(String binaryNumber) {
-        // compile error if not initialize decimalNumber //
         int decimalNumber = 0, binaryDigit;
         char symbol;
         for (int i = 0; i < binaryNumber.length(); i++) {
@@ -26,8 +25,18 @@ public class NumberSystemInterpreter {
                 System.out.println("Wrong write of binary number format!");
                 break;
             }
-            decimalNumber += binaryDigit * Math.pow(2, i);
+            decimalNumber += binaryDigit << i;
         }
         return decimalNumber;
     }
 }
+
+// 0101 0
+// 0101 1
+// 1010 5
+// 0000
+
+// 1001 0
+// 1001 1
+// 0010 1
+// 1000 1
